@@ -3,7 +3,7 @@
 ## 👥 Integrantes da Equipe
 - Kauan Custodio Propodoski  
 - Jhoni Cauan Freitas Elias  
-- Leonardo Joaquim da Silva  
+- Leonardo da Silva Joaquim  
 - João Luís Machado Ricken  
 - Miguel Nilo Rosa  
 
