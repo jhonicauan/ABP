@@ -1,0 +1,28 @@
+.header{
+    background-color: rgb(155, 212, 169);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 5em;
+    max-height: 6em;
+    border-radius: 0 0 1em 1em;
+}
+
+.header_options{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1.5em;
+}
+
+.header_options li{
+    font-size: large;
+    list-style: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.header_options li:hover{
+    font-size: larger;
+    color:  rgb(104, 150, 115);
+}
