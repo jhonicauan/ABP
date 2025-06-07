@@ -24,7 +24,7 @@ export class Leciona {
 }
 
 
-export class adm {
+class adm {
     add(entity, instance){
        db[entity].push(instance)
     }
@@ -44,3 +44,5 @@ export class adm {
         list.slice(index)
     }
 }
+
+export const adim = new adm(); 

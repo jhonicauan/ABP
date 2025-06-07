@@ -1,8 +1,8 @@
-html{
+html, body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 100vw;
-}
-
-body{
-    margin: 0%;
+    max-height: 100%;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
+    background-color:  rgb(238, 248, 241);
 }
