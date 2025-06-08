@@ -27,9 +27,6 @@ function Welcomeback({name}){
     return(
         <div className="message_box">
             <h2>Bem vindo, {name}</h2>
-        </div>
-    )
-}
 
 function Boxoptions({entity}){
     return(
@@ -63,5 +60,3 @@ function Geralinfos({entity}){
                 </li>
             </ul>
         </div>
-    )
-}

@@ -9,5 +9,6 @@ class BancoDeDados {
     this.atividades = [{id: 1, idAluno: 2212, idMateria: 2, title: 'ATV 01 avaliativa', description: 'bla bla bla bla', grade: 8.8}];
   }
 }
+
 export const db = new BancoDeDados()
 

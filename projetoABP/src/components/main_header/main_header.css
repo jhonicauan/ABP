@@ -12,7 +12,6 @@
 
 .header_options{
     display: flex;
-    align-items: center;
     justify-items: center;
     gap: 1.5em;
     text-align: center;
@@ -28,4 +27,5 @@
 .header_options li:hover{
     font-size: larger;
     color:  rgb(37, 54, 42);
+
 }

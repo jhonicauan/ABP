@@ -24,7 +24,7 @@ export class Leciona {
 }
 
 
-class adm {
+export class adm {
     add(entity, instance){
        db[entity].push(instance)
     }
@@ -45,4 +45,4 @@ class adm {
     }
 }
 
-export const adim = new adm(); 
+
