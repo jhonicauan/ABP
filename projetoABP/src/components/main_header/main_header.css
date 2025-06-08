@@ -1,18 +1,20 @@
 .header{
-    background-color: rgb(155, 212, 169);
+    background-color:  rgb(229, 252, 235);
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 1rem 2rem;
     padding: 0 5em;
     max-height: 6em;
-    border-radius: 0 0 1em 1em;
+    border-radius:1em;
+     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
 }
 
 .header_options{
     display: flex;
-    align-items: center;
     justify-items: center;
     gap: 1.5em;
+    text-align: center;
 }
 
 .header_options li{
@@ -24,5 +26,6 @@
 
 .header_options li:hover{
     font-size: larger;
-    color:  rgb(104, 150, 115);
+    color:  rgb(37, 54, 42);
+
 }

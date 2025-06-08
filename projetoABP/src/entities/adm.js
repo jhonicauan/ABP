@@ -44,3 +44,5 @@ export class adm {
         list.slice(index)
     }
 }
+
+
