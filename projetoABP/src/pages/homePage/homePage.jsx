@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { db } from '../../../db'
 import { adim } from '../../entities/adm'
@@ -11,6 +12,7 @@ export default function Homepage({entity = 'professores', id = 2}) {
         professores: ['atividades', 'salas', 'alunos'],
         administrador: ['professores', 'materias', 'salas', 'materias']
     }
+
     return (
         <>
         <main>
@@ -22,6 +24,7 @@ export default function Homepage({entity = 'professores', id = 2}) {
             </div>
         </main>
          <Geralinfos entity={entity} user={user}></Geralinfos> 
+
         </>   
          )
 }
@@ -30,9 +33,6 @@ function Welcomeback({name}){
     return(
         <div className="message_box">
             <h2>Bem vindo, {name}</h2>
-        </div>
-    )
-}
 
 function Boxoptions({entity}){
     const [clicked, setClicked] = useState(false)
@@ -116,3 +116,4 @@ function Geralinfos({entity, user}){
         </div>
     )
 }
+
