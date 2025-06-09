@@ -2,7 +2,7 @@ import { db } from "../../db";
 
 class atividades {
     constructor(idAtividade,idAluno, idMateria, title, description, grade ){
-        this.idAtividade = idAtividade;
+        this.id = idAtividade;
         this.idAluno = idAluno;
         this.idMateria = idMateria;
         this.title = title;
@@ -13,7 +13,7 @@ class atividades {
 
 export class professor {
     constructor(name, email, password, telephone){
-        this.idProfessor = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        this.id = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -22,13 +22,12 @@ export class professor {
     listClasses(idProfessor) {
         return db.leciona
         .filter(lecionaItem => lecionaItem.idProfessor == idProfessor)
-        .map(lecionaItem => db.salas.find(salaItem => salaItem.idSala == lecionaItem.idSala))
+        .map(lecionaItem => db.salas.find(salaItem => salaItem.id == lecionaItem.idSala))
     }
     listStudents(idProfessor){
         const classes = this.listClasses(idProfessor);
-        return db.alunos.filter(alunoItem => {
-            classes.some(classItem => classItem.idSala == alunoItem.idSala)
-        })
+        const salaIds = classes.map(classesItem => classesItem.id);
+        return db.alunos.filter(aluno => salaIds.includes(aluno.idSala));
     }
     addActivities(idAtividade,idSala, idMateria, title, description, grade){
         db.alunos
@@ -42,3 +41,5 @@ export class professor {
     }
    
 }
+
+export const prof = new professor()

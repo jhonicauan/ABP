@@ -1,0 +1,27 @@
+.input_box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3em;
+}
+
+.input_box h5{
+    margin: 0;
+}
+.input_box input{
+    width: 100%;
+    padding: 0.5em 0 0.5em 0.5em;
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    transition: all 0.2s;
+}
+
+.input_box input:focus{
+    outline: solid 0.1em rgb(229, 252, 235);
+    outline-offset: 0.15em;
+}
+
+.input_box input::placeholder{
+    font-style: italic;
+}

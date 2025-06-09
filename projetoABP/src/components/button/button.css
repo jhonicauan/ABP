@@ -1,0 +1,36 @@
+.button_default{
+    padding: 1em;
+    outline: none;
+    border-radius: 0.3em;
+    border: solid 0.1em  rgb(229, 252, 235);
+    cursor: pointer;
+    background-color: rgb(55, 114, 71) ;
+    transition: all 0.2s;
+    color:  rgb(229, 252, 235)
+}
+
+.button_default:hover{
+    font-weight: 700;
+    padding: 1em 1.5em;
+    background-color: rgb(37, 54, 42);
+}
+
+.button_submit{
+    padding: 1em;
+    outline: none;
+    border-radius: 0.3em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color:  rgb(37, 54, 42);
+    font-weight: 600;
+    outline: 0.1em solid  rgb(229, 252, 235);
+    outline-offset: 0.2em;
+}
+
+.button_submit:hover{
+    padding: 1em 1.5em;
+    outline: 0.15em solid  rgb(229, 252, 235); 
+    background-color:  rgb(37, 54, 42);
+    color:  rgb(229, 252, 235);
+}
