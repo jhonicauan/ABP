@@ -1,0 +1,55 @@
+
+.list_entity{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 70vw;
+}
+
+.list_entity h3{
+    font-size: clamp(0.5em, 1.2vw, 2em);
+    margin: 0;
+}
+
+.list_entity h5{
+    font-size: clamp(0.5em, 1vw, 2em);
+    font-weight: 400;
+    margin: 0;
+}
+
+.list_entity li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    gap: 0.5em;
+    margin: 0;
+    background-color:  rgb(229, 252, 235);
+    padding: 0.8em 1.2em;
+    border-radius: 0.3em;
+    border:solid rgb(37, 54, 42) 0.01em;
+    box-shadow: 3px 5px 46px -27px rgba(37,54,42,0.75);
+}
+
+.image_box{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    background-color:  rgb(229, 252, 235);
+}
+
+.image_box img{
+    height: clamp(0.5em, 1.2vw, 2em);
+    transition: all 0.2s;
+}
+
+.image_box img:hover{
+    height: clamp(0.5em, 1.5vw, 2em);
+}
+
+.line_items{
+    height: 2em;
+    border-color: rgba(37,54,42,0.75);
+    margin: 0;
+}

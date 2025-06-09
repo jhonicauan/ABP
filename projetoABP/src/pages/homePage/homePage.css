@@ -18,6 +18,7 @@ main{
     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
 }
 
+
 .options_menu{
     display: flex;
 }
@@ -36,17 +37,35 @@ main{
 
 .box_options{
     text-align: center;
+    font-size: clamp(0.5em, 1vw, 2em);
     background-color: rgb(229, 252, 235);
     box-sizing: border-box;
     overflow-wrap: break-word;
     color: rgb(37, 54, 42);
     padding: 2em 1em;
     border-radius: 0.3em;
+}
+
+.active{
+    display: flex;
+    text-align: left;
+    background-color: rgb(229, 252, 235);
+    color: rgb(37, 54, 42);
+    padding: 4.5%;
+    border-radius: 1em;
     width: 25%;
     transition: all 0.2s linear;
     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
     cursor: pointer;
 }
+
+.active ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;    
+    flex-direction: column;
+}
+
 
 .box_options:hover{
     padding: 5%;
@@ -66,12 +85,12 @@ main{
     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
 }
 
+
 .geral_title{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .geral_box h2{
     width: 40%;
     text-align: left;

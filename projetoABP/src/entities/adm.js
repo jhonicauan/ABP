@@ -2,14 +2,14 @@ import { db } from "../../db";
 
 export class Sala {
   constructor(idSala, qtdAlunos) {
-    this.idSala = idSala;
+    this.id = idSala;
     this.qtdAlunos = qtdAlunos;
   }
 }
 
 export class Materia {
   constructor(idMateria, nome) {
-    this.idMateria = idMateria;
+    this.id = idMateria;
     this.nome = nome;
   }
 }
@@ -24,7 +24,7 @@ export class Leciona {
 }
 
 
-export class adm {
+class adm {
     add(entity, instance){
        db[entity].push(instance)
     }
@@ -36,13 +36,14 @@ export class adm {
     }
     update(entity,id,newdata){
         const item = this.find(entity,id)
-        db[entity].assign(item, newdata)
+        Object.assign(item, newdata)
     }
     delete(entity, id){
         const list = db[entity]
         const index = list.findIndex(item => item.id == id)
-        list.slice(index)
+        list.splice(index, 1)
     }
 }
 
+export const adim = new adm(); 
 
