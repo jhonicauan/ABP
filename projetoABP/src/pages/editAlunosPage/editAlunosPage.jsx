@@ -3,8 +3,10 @@ import Input from '../../components/input/input'
 import Button from '../../components/button/button'
 import { adim } from '../../entities/adm'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
-export default function EditAlunosPage({idAluno = 2212 }) {
+export default function EditAlunosPage() {
+    const {idAluno} = useParams()
     const [aluno, setAluno] = useState(adim.find('alunos', idAluno))
     const deleteEntity = () => {
         adim.delete('alunos', idAluno)

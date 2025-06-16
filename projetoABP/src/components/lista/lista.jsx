@@ -31,26 +31,26 @@ function ListHeader({keyList}) {
     ) 
 }
 
-function ListContent({entityList, keyList}) {
-    return(
-        <>
-         {entityList.map(listItem => (
-        <ul className="list_entity">
-                    {keyList.map(keyItem => (
-                <li>
-                        <h5>{listItem[keyItem]}</h5>
-                        <hr className='line_items'/>
-                </li>
-                    ))}
-                    <li>
-                        <Link to="/editalunos">
-                         <div className='image_box'>
-                        <img src={edit_icon} alt="edit_icon" />
-                        </div>
-                        </Link>
-                    </li>
+function ListContent({ entityList, keyList }) {
+  return (
+    <>
+      {entityList.map(listItem => (
+        <ul className="list_entity" key={listItem.id}>
+          {keyList.map(keyItem => (
+            <li key={keyItem}>
+              <h5>{listItem[keyItem]}</h5>
+              <hr className='line_items' />
+            </li>
+          ))}
+          <li>
+            <Link to={`/editalunos/${listItem.id}`}>
+              <div className='image_box'>
+                <img src={edit_icon} alt="edit_icon" />
+              </div>
+            </Link>
+          </li>
         </ul>
-            ))}
-        </>
-    )
+      ))}
+    </>
+  )
 }
