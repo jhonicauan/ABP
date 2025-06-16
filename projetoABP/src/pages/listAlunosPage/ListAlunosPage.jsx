@@ -1,9 +1,10 @@
 import './ListAlunosPage.css'
 import { prof } from '../../entities/professor'
 import Lista from '../../components/lista/lista'
+import { db } from '../../../db'
 
 export default function ListAlunosPage({ProfessorId = 2}) {
-    const listAlunos = prof.listStudents(ProfessorId)
+    const listAlunos = db['alunos']
     return (
         <main>
             <div className='tittle'>

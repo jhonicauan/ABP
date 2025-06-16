@@ -33,7 +33,9 @@ function Welcomeback({name}){
     return(
         <div className="message_box">
             <h2>Bem vindo, {name}</h2>
-
+        </div>
+    )
+}
 function Boxoptions({entity}){
     const [clicked, setClicked] = useState(false)
     function handleclick(e) {
