@@ -33,16 +33,11 @@ export default function EditAlunosPage({idAluno = 2212 }) {
             </div>
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
-                <div className="first_line">
-
                 <Input input_label={'Id'} value={aluno.id} width={10} onChange={handleChange} id={'id'}></Input>
                 <Input input_label={'Nome'} value={aluno.name} width={40} onChange={handleChange} id={'name'}></Input>
                 <Input input_label={'Idade'} value={aluno.idade} width={10} onChange={handleChange} id={'idade'}></Input>
-                </div>
-                <div className="second_line">
                 <Input input_label={'Email'} value={aluno.email} width={40} onChange={handleChange} id={'email'}></Input>
                  <Input input_label={'Sala'} value={aluno.idSala} width={10} onChange={handleChange} id={'idSala'}></Input>
-                </div>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle}></Button>
                  <Button buttonText={'Deletar'} style={DeleteButtonStyle} onclick={deleteEntity}></Button>

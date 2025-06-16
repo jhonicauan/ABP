@@ -1,27 +1,54 @@
 import './lista.css'
 import edit_icon from './images/edit_icon.png'
 
-export default function Lista({entityList, keyexception}) {
+export default function Lista({entityList, keyException}) {
     const EntityKeys = Object.keys(entityList[0])
-    const Keys = EntityKeys.filter(key => key != 'password' && key != keyexception)
+    const Keys = EntityKeys.filter(key => key != 'password' && key != keyException)
     return (
         <div className='list_main_box'>
-        <ul className="list_entity">
-            {entityList.map(listItem => (
+        <ListHeader keyList={Keys}></ListHeader>
+        <div className='list_inner_box'>
+         <ListContent keyList={Keys} entityList={entityList}></ListContent>
+        </div>
+     
+        </div>
+    )
+}
+
+function ListHeader({keyList}) {
+    return (
+         <ul className='list_header'>
+            {keyList.map(keyItem => (
                 <li>
-                    {Keys.map(keyItem => (
-                        <>
-                        <h3>{keyItem}:</h3>
-                        <h5>{listItem[keyItem]}</h5>
-                        <hr className='line_items'/>
-                        </>
-                    ))}
-                       <div className='image_box'>
-                        <img src={edit_icon} alt="edit_icon" />
-                        </div>
+                    <h3>{keyItem}</h3>
+                    <hr className='line_items'/>
                 </li>
             ))}
+            <li>
+                <h3>Editar</h3>
+            </li>
         </ul>
-        </div>
+    ) 
+}
+
+function ListContent({entityList, keyList}) {
+    return(
+        <>
+         {entityList.map(listItem => (
+        <ul className="list_entity">
+                    {keyList.map(keyItem => (
+                <li>
+                        <h5>{listItem[keyItem]}</h5>
+                        <hr className='line_items'/>
+                </li>
+                    ))}
+                    <li>
+                         <div className='image_box'>
+                        <img src={edit_icon} alt="edit_icon" />
+                        </div>
+                    </li>
+        </ul>
+            ))}
+        </>
     )
 }
