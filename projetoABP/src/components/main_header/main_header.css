@@ -3,11 +3,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 1rem 2rem;
     padding: 0 5em;
     max-height: 6em;
-    border-radius:1em;
-     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
+    box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
 }
 
 .header_options{

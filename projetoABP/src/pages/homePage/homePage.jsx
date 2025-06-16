@@ -4,7 +4,7 @@ import { db } from '../../../db'
 import { adim } from '../../entities/adm'
 import { prof } from '../../entities/professor'
 import './homePage.css'
-
+import { Link } from 'react-router-dom'
 export default function Homepage({entity = 'professores', id = 2}) {
     const user = adim.find(entity,id)
     const Options = {
@@ -17,14 +17,15 @@ export default function Homepage({entity = 'professores', id = 2}) {
         <>
         <main>
             <Welcomeback name={user.name}></Welcomeback>
-            <div className='options'>
-               {Options[entity].map(optionItem => 
-               <Boxoptions entity={optionItem}></Boxoptions>
-               )}
+            <div className='interface'>
+                <div className='options'>
+                {Options[entity].map(optionItem => 
+                <Boxoptions entity={optionItem}></Boxoptions>
+                )}
+                </div>
+                <Geralinfos entity={entity} user={user}></Geralinfos> 
             </div>
         </main>
-         <Geralinfos entity={entity} user={user}></Geralinfos> 
-
         </>   
          )
 }
@@ -37,20 +38,13 @@ function Welcomeback({name}){
     )
 }
 function Boxoptions({entity}){
-    const [clicked, setClicked] = useState(false)
-    function handleclick(e) {
-        e.target.classList.toggle("active")
-        setClicked(prev => prev = !prev)
-    }
     return(
-        <div className='box_options' onClick={handleclick}>
+        <div className='box_options'>
             <h3>{entity}</h3>
-            {clicked && 
             <ul>
-            <li>Adicionar {entity}</li> 
-            <li>Listar {entity}</li>
+           <Link to={`/add${entity}`}> <li>Adicionar {entity}</li> </Link>
+            <Link to={`/list${entity}`}><li>Listar {entity}</li></Link>
             </ul>
-            }
         </div>
     )
 }
@@ -111,7 +105,9 @@ function Geralinfos({entity, user}){
 
     return(
         <div className='geral_box'>
-            <h2>Informaçoes</h2>
+            <div className='geral_title'>
+                <h2>Informaçoes</h2>
+            </div>
                 {entity == 'administrador' && <InfosAdm/>}
                 {entity == 'alunos' && <InfosAluno user={user}/>}
                 {entity == 'professores' && <InfosProfessor user={user}/>}

@@ -1,6 +1,6 @@
 import './lista.css'
 import edit_icon from './images/edit_icon.png'
-
+import { Link } from 'react-router-dom'
 export default function Lista({entityList, keyException}) {
     const EntityKeys = Object.keys(entityList[0])
     const Keys = EntityKeys.filter(key => key != 'password' && key != keyException)
@@ -43,9 +43,11 @@ function ListContent({entityList, keyList}) {
                 </li>
                     ))}
                     <li>
+                        <Link to="/editalunos">
                          <div className='image_box'>
                         <img src={edit_icon} alt="edit_icon" />
                         </div>
+                        </Link>
                     </li>
         </ul>
             ))}

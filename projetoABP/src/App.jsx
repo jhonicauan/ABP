@@ -2,14 +2,21 @@ import Homepage from './pages/homePage/homePage'
 import Mainheader from './components/main_header/main_header'
 import ListAlunosPage from './pages/listAlunosPage/listAlunosPage'
 import EditAlunosPage from './pages/editAlunosPage/editAlunosPage'
+import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import './App.css'
 
 function App() {
 
   return (
    <>
-    <Mainheader></Mainheader>
-    <ListAlunosPage></ListAlunosPage>
+    <Router>
+        <Mainheader></Mainheader>
+      <Routes>
+        <Route path='/' element={<Homepage></Homepage>}/>
+        <Route path='/listalunos' element={<ListAlunosPage></ListAlunosPage>}/>
+        <Route path='/editalunos' element={<EditAlunosPage></EditAlunosPage>}/>
+      </Routes>
+    </Router>
    </>
   )
 }

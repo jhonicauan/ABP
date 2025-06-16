@@ -9,6 +9,8 @@ main{
     justify-content: center;
     align-items: center;
     font-size: 2em;
+    width: 80%;
+    padding: 0.5rem;
     background-color:  rgb(229, 252, 235);
     min-height: 5em;
     max-height: 10em;
@@ -29,14 +31,15 @@ main{
     justify-content: center;
     gap: 1.5em;
     border-radius: 0.3em;
-    margin: 2rem;
+    box-sizing: border-box;
     padding: 1em;
     flex-wrap: wrap;
-    width: 100%;
+    width: 40%;
 }
 
 .box_options{
     text-align: center;
+    width: 30%;
     font-size: clamp(0.5em, 1vw, 2em);
     background-color: rgb(229, 252, 235);
     box-sizing: border-box;
@@ -51,9 +54,7 @@ main{
     text-align: left;
     background-color: rgb(229, 252, 235);
     color: rgb(37, 54, 42);
-    padding: 4.5%;
     border-radius: 1em;
-    width: 25%;
     transition: all 0.2s linear;
     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
     cursor: pointer;
@@ -68,7 +69,6 @@ main{
 
 
 .box_options:hover{
-    padding: 5%;
     color:  rgb(37, 54, 42);;
     box-shadow: -1px 4px 12px 0px rgba(37,54,42,0.75);
 }
@@ -77,23 +77,21 @@ main{
     color: rgb(229, 252, 235);
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 40%;
     border-radius: 0.3em;
     background-color:  rgb(37, 54, 42);
-    margin: 2rem;
     min-height: 10em;
     box-shadow: -1px 4px 10px 0px rgba(37,54,42,0.75);
 }
 
 
 .geral_title{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .geral_box h2{
-    width: 40%;
-    text-align: left;
     font-size: 2.5em;
     top: 0;
 }
@@ -101,13 +99,13 @@ main{
 .geral_box ul{
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    gap: 0.2em;
 }
 
 .geral_box ul li{
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.2em;
     list-style: none;    
     font-size: 1.2em;
 }
@@ -117,4 +115,12 @@ main{
     max-width: 2.5em;
     aspect-ratio: 1 / 1;
     height: auto;
+}
+
+.interface{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
 }
