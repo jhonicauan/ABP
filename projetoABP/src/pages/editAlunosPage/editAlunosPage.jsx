@@ -3,17 +3,20 @@ import Input from '../../components/input/input'
 import Button from '../../components/button/button'
 import { adim } from '../../entities/adm'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function EditAlunosPage() {
     const {idAluno} = useParams()
     const [aluno, setAluno] = useState(adim.find('alunos', idAluno))
+    const navigate = useNavigate();
     const deleteEntity = () => {
         adim.delete('alunos', idAluno)
+        navigate('/listalunos')
     }
     const updateEntity = (e) => {
         e.preventDefault()
         adim.update('alunos', idAluno, aluno)
+        navigate('/listalunos')
     }
     const handleChange = (e) => {
         const key = e.target.id
@@ -41,7 +44,7 @@ export default function EditAlunosPage() {
                 <Input input_label={'Email'} value={aluno.email} width={40} onChange={handleChange} id={'email'}></Input>
                  <Input input_label={'Sala'} value={aluno.idSala} width={10} onChange={handleChange} id={'idSala'}></Input>
                 <div className="buttons_line">
-                 <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle}></Button>
+                 <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>
                  <Button buttonText={'Deletar'} style={DeleteButtonStyle} onclick={deleteEntity}></Button>
                 </div>
             </form>

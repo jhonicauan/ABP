@@ -3,7 +3,7 @@ import { prof } from '../../entities/professor'
 import Lista from '../../components/lista/lista'
 import { db } from '../../../db'
 
-export default function ListAlunosPage({ProfessorId = 2}) {
+export default function ListAlunosPage() {
     const listAlunos = db['alunos']
     return (
         <main>

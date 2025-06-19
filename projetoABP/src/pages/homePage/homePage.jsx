@@ -1,16 +1,27 @@
 
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { db } from '../../../db'
 import { adim } from '../../entities/adm'
 import { prof } from '../../entities/professor'
 import './homePage.css'
 import { Link } from 'react-router-dom'
-export default function Homepage({entity = 'professores', id = 2}) {
-    const user = adim.find(entity,id)
+export default function Homepage() {
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const id = localStorage.getItem('id')
+        const tipo = localStorage.getItem('tipo')
+
+        if (!id || !tipo) {
+        navigate('/')
+        }
+    }, [navigate])
+    const user = adim.find(localStorage.getItem('tipo'),localStorage.getItem('id'))
     const Options = {
         alunos: ['atividades', 'materias'],
-        professores: ['atividades', 'salas', 'alunos'],
-        administrador: ['professores', 'materias', 'salas', 'materias']
+        professores: ['atividades', 'salas'],
+        administrador: ['professores','alunos', 'materias', 'salas', 'materias']
     }
 
     return (
@@ -19,11 +30,11 @@ export default function Homepage({entity = 'professores', id = 2}) {
             <Welcomeback name={user.name}></Welcomeback>
             <div className='interface'>
                 <div className='options'>
-                {Options[entity].map(optionItem => 
+                {Options[localStorage.getItem('tipo')].map(optionItem => 
                 <Boxoptions entity={optionItem}></Boxoptions>
                 )}
                 </div>
-                <Geralinfos entity={entity} user={user}></Geralinfos> 
+                <Geralinfos entity={localStorage.getItem('tipo')} user={user}></Geralinfos> 
             </div>
         </main>
         </>   
