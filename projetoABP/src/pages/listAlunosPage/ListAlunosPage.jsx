@@ -1,4 +1,5 @@
 import './ListAlunosPage.css'
+import { prof } from '../../entities/professor'
 import Lista from '../../components/lista/lista'
 import { db } from '../../../db'
 

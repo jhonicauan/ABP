@@ -1,8 +1,7 @@
 import Homepage from './pages/homePage/homePage'
 import Mainheader from './components/main_header/main_header'
 import LoginPage from './pages/loginPage/loginPage'
-import ListAlunosPage from './pages/listAlunosPage/ListAlunosPage'
-import AddAlunosPage from './pages/addAlunosPage/addAlunosPage'
+import ListAlunosPage from './pages/listAlunosPage/listAlunosPage'
 import EditAlunosPage from './pages/editAlunosPage/editAlunosPage'
 import ListProfessoresPage from './pages/listProfessoresPage/listProfessoresPage'
 import EditProfessoresPage from './pages/editProfessoresPage/editProfessoresPage'
@@ -22,8 +21,6 @@ function App() {
         <Route path='/editalunos/:idAluno' element={<EditAlunosPage></EditAlunosPage>}/>
         <Route path='/listprofessores' element={<ListProfessoresPage></ListProfessoresPage>}/>
         <Route path='/editProfessores/:idProfessores' element={<EditProfessoresPage></EditProfessoresPage>}/>
-        <Route path='addalunos' element={<AddAlunosPage></AddAlunosPage>}/>
-         8c300e98702b15ab77d264125b685f93a9ac6eef
       </Routes>
     </Router>
    </>

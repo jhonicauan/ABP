@@ -27,7 +27,7 @@ export default function Homepage() {
     return (
         <>
         <main>
-            <Welcomeback name={user.nome}></Welcomeback>
+            <Welcomeback name={user.name}></Welcomeback>
             <div className='interface'>
                 <div className='options'>
                 {Options[localStorage.getItem('tipo')].map(optionItem => 
@@ -83,7 +83,7 @@ const InfosAluno = ({user}) => {
     return (
          <ul>
                 <li>
-                    <h4>Nome: {user.nome}</h4>
+                    <h4>Nome: {user.name}</h4>
                 </li>
                 <li>
                     <h4>Telefone: {user.email}</h4>
@@ -100,10 +100,10 @@ const InfosProfessor = ({user}) => {
     return (
          <ul>
                 <li>
-                    <h4>Nome: {user.nome}</h4>
+                    <h4>Nome: {user.name}</h4>
                 </li>
                 <li>
-                    <h4>Telefone: {user.telefone}</h4>
+                    <h4>Telefone: {user.telephone}</h4>
                 </li>
                 <li>
                     <h4>Numero de salas: {countClasses}</h4>
