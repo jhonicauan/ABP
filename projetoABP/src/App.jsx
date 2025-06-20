@@ -10,6 +10,13 @@ import EditProfessoresPage from './pages/editProfessoresPage/editProfessoresPage
 import AddMateriasPage from './pages/addMateriasPage/addMateriasPage'
 import EditMateriasPage from './pages/editMateriasPage/editMateriasPage'
 import ListMateriasPage from './pages/listMateriasPage/listMateriasPage'
+import ListSalasPage from './pages/listSalasPage/listSalasPage'
+import AddSalasPage from './pages/addSalasPage/addSalasPage'
+import EditSalasPage from './pages/editSalasPage/editSalasPage'
+import AddLecionaPage from './pages/addLecionaPage/addLecionaPage'
+import ListLecionaPage from './pages/listLecionaPage/ListLecionaPage'
+import EditLecionaPage from './pages/editLecionaPage/editLecionaPage'
+import "react-widgets/styles.css";
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import './App.css'
 
@@ -31,6 +38,14 @@ function App() {
         <Route path='/addmaterias' element={<AddMateriasPage></AddMateriasPage>}/>
         <Route path='/editmaterias/:idMateria' element={<EditMateriasPage></EditMateriasPage>}/>
         <Route path='/listmaterias' element={<ListMateriasPage></ListMateriasPage>}/>
+        <Route path='/listsalas' element={<ListSalasPage></ListSalasPage>}/>
+        <Route path='/addsalas' element={<AddSalasPage></AddSalasPage>}/>
+        <Route path='/editsalas/:idSala' element={<EditSalasPage></EditSalasPage>}/>
+        <Route path='/addleciona' element={<AddLecionaPage></AddLecionaPage>}/>
+        <Route path='/listleciona' element={<ListLecionaPage></ListLecionaPage>}/>
+        <Route path='/editleciona/:idLeciona' element={<EditLecionaPage></EditLecionaPage>}/>
+        
+
         
          8c300e98702b15ab77d264125b685f93a9ac6eef
       </Routes>

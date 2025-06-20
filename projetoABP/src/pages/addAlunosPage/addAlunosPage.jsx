@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 export default function AddAlunosPage() {
     const [aluno, setAluno] = useState({
         id: '',
-        name: '',
+        nome: '',
         idade: '',
         email: '',
         senha: '',
@@ -42,7 +42,7 @@ export default function AddAlunosPage() {
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
                     <Input input_label={'Id'} value={aluno.id} width={10} onChange={handleChange} id={'id'} />
-                    <Input input_label={'Nome'} value={aluno.name} width={40} onChange={handleChange} id={'name'} />
+                    <Input input_label={'Nome'} value={aluno.nome} width={40} onChange={handleChange} id={'nome'} />
                     <Input input_label={'Idade'} value={aluno.idade} width={10} onChange={handleChange} id={'idade'} />
                     <Input input_label={'Email'} value={aluno.email} width={40} onChange={handleChange} id={'email'} />
                     <Input input_label={'Senha'} value={aluno.senha} width={40} onChange={handleChange} id={'senha'} />

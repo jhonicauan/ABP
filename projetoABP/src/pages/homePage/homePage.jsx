@@ -21,7 +21,7 @@ export default function Homepage() {
     const Options = {
         alunos: ['atividades', 'materias'],
         professores: ['atividades', 'salas'],
-        administrador: ['professores','alunos', 'materias', 'salas', 'materias']
+        administrador: ['professores','alunos', 'materias', 'salas','leciona']
     }
 
     return (
@@ -61,7 +61,7 @@ function Boxoptions({entity}){
 }
 
 const InfosAdm = () => {
-    let TotalStudents = db.salas.reduce((acc, salaItem) => acc.qtdAlunos + salaItem.qtdAlunos)
+    let TotalStudents = db.alunos.length;
     let TotalTeachers = db.professores.length;
     let TotalClassrooms = db.salas.length;
        return ( 
