@@ -9,7 +9,7 @@ export default function ListAlunosPage() {
             <div className='tittle'>
                 <h2>Lista de Alunos</h2>
             </div>
-            <Lista entityList={listAlunos}></Lista>
+            <Lista entityList={listAlunos} editRoute="/editAlunos" />
         </main>
     )
 }

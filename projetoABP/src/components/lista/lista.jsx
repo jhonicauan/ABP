@@ -1,14 +1,14 @@
 import './lista.css'
 import edit_icon from './images/edit_icon.png'
 import { Link } from 'react-router-dom'
-export default function Lista({entityList, keyException}) {
+export default function Lista({entityList, keyException, editRoute}) {
     const EntityKeys = Object.keys(entityList[0])
     const Keys = EntityKeys.filter(key => key != 'password' && key != keyException)
     return (
         <div className='list_main_box'>
         <ListHeader keyList={Keys}></ListHeader>
         <div className='list_inner_box'>
-         <ListContent keyList={Keys} entityList={entityList}></ListContent>
+         <ListContent keyList={Keys} entityList={entityList} editRoute={editRoute}></ListContent>
         </div>
      
         </div>
@@ -31,7 +31,7 @@ function ListHeader({keyList}) {
     ) 
 }
 
-function ListContent({ entityList, keyList }) {
+function ListContent({ entityList, keyList, editRoute }) {
   return (
     <>
       {entityList.map(listItem => (
@@ -43,7 +43,7 @@ function ListContent({ entityList, keyList }) {
             </li>
           ))}
           <li>
-            <Link to={`/editalunos/${listItem.id}`}>
+            <Link to={`${editRoute}/${listItem.id}`}>
               <div className='image_box'>
                 <img src={edit_icon} alt="edit_icon" />
               </div>

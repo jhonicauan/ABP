@@ -11,12 +11,12 @@ export default function EditProfessoresPage() {
     const navigate = useNavigate();
     const deleteEntity = () => {
         adim.delete('professores', idProfessor)
-        navigate('/listaprofessores')
+        navigate('/listprofessores')
     }
     const updateEntity = (e) => {
         e.preventDefault()
         adim.update('professores', idProfessor, professor)
-        navigate('/listaprofessores')
+        navigate('/listprofessores')
     }
     const handleChange = (e) => {
         const key = e.target.id
@@ -40,7 +40,7 @@ export default function EditProfessoresPage() {
             <form className='form_box' onSubmit={updateEntity}>
                 <Input input_label={'Id'} value={professor.id} width={10} onChange={handleChange} id={'id'}></Input>
                 <Input input_label={'Nome'} value={professor.name} width={40} onChange={handleChange} id={'name'}></Input>
-                <Input input_label={'Telefone'} value={professor.idade} width={11} onChange={handleChange} id={'telefone'}></Input>
+                <Input input_label={'Telefone'} value={professor.idade} width={20} onChange={handleChange} id={'telefone'}></Input>
                 <Input input_label={'Email'} value={professor.email} width={40} onChange={handleChange} id={'email'}></Input>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>
