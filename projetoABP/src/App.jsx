@@ -7,6 +7,9 @@ import EditAlunosPage from './pages/editAlunosPage/editAlunosPage'
 import ListProfessoresPage from './pages/listProfessoresPage/listProfessoresPage'
 import AddProfessoresPage from './pages/addProfessoresPage/addProfessoresPage'
 import EditProfessoresPage from './pages/editProfessoresPage/editProfessoresPage'
+import AddMateriasPage from './pages/addMateriasPage/addMateriasPage'
+import EditMateriasPage from './pages/editMateriasPage/editMateriasPage'
+import ListMateriasPage from './pages/listMateriasPage/listMateriasPage'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import './App.css'
 
@@ -25,6 +28,9 @@ function App() {
         <Route path='/listprofessores' element={<ListProfessoresPage></ListProfessoresPage>}/>
         <Route path='/editProfessores/:idProfessor' element={<EditProfessoresPage></EditProfessoresPage>}/>
         <Route path='/addprofessores' element={<AddProfessoresPage></AddProfessoresPage>}/>
+        <Route path='/addmaterias' element={<AddMateriasPage></AddMateriasPage>}/>
+        <Route path='/editmaterias/:idMateria' element={<EditMateriasPage></EditMateriasPage>}/>
+        <Route path='/listmaterias' element={<ListMateriasPage></ListMateriasPage>}/>
         
          8c300e98702b15ab77d264125b685f93a9ac6eef
       </Routes>
