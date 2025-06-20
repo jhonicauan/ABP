@@ -1,10 +1,11 @@
 import './addAlunosPage.css'
+import { db } from '../../../db'
 import Input from '../../components/input/input'
 import Button from '../../components/button/button'
 import { adim } from '../../entities/adm'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import Combobox from "react-widgets/Combobox";
 export default function AddAlunosPage() {
     const [aluno, setAluno] = useState({
         id: '',
@@ -15,6 +16,10 @@ export default function AddAlunosPage() {
         idSala: ''
     })
 
+    useEffect(()=>{
+        console.log(aluno)
+    },[aluno])
+    const ListSala = db.salas.map(salas => ({id:salas.id, sala:salas.sala}))
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -46,7 +51,7 @@ export default function AddAlunosPage() {
                     <Input input_label={'Idade'} value={aluno.idade} width={10} onChange={handleChange} id={'idade'} />
                     <Input input_label={'Email'} value={aluno.email} width={40} onChange={handleChange} id={'email'} />
                     <Input input_label={'Senha'} value={aluno.senha} width={40} onChange={handleChange} id={'senha'} />
-                    <Input input_label={'Sala'} value={aluno.idSala} width={10} onChange={handleChange} id={'idSala'} />
+                    <Combobox data={ListSala} placeholder='selecione a sala' textField='sala' dataKey='id' onChange={(value) => setAluno(prev => ({ ...prev, idSala: value.id }))} value={aluno.idSala} id={'idSala'}/>
                     <div className="buttons_line">
                         <Button buttonText={'Adicionar'} type='submit' style={AddButtonStyle} onclick={addEntity} />
                     </div>

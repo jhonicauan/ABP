@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 export default function AddProfessoresPage() {
     const [professor, setProfessor] = useState({
         id: '',
-        name: '',
+        nome: '',
         email: '',
         telefone: '',
         senha: ''
@@ -41,7 +41,7 @@ export default function AddProfessoresPage() {
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
                     <Input input_label={'Id'} value={professor.id} width={10} onChange={handleChange} id={'id'} />
-                    <Input input_label={'Nome'} value={professor.name} width={40} onChange={handleChange} id={'name'} />
+                    <Input input_label={'Nome'} value={professor.nome} width={40} onChange={handleChange} id={'nome'} />
                     <Input input_label={'Email'} value={professor.email} width={40} onChange={handleChange} id={'email'} />
                     <Input input_label={'Telefone'} value={professor.telefone} width={20} onChange={handleChange} id={'telefone'} />
                     <Input input_label={'Senha'} value={professor.senha} width={10} onChange={handleChange} id={'senha'} />

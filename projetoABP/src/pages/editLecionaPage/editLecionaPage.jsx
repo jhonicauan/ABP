@@ -10,9 +10,9 @@ import { db } from '../../../db'
 export default function EditLecionaPage() {
     const {idLeciona} = useParams()
     const [leciona, setLeciona] = useState(adim.find('leciona', idLeciona))
-    const idListProfessor = db.professores.map(professores => professores.id)
-    const idListMateria = db.materias.map(materias => materias.id)
-    const idListSala = db.salas.map(salas => salas.id)
+    const ListProfessor = db.professores.map(professores => ({id:professores.id, nome:professores.nome}))
+    const ListMateria = db.materias.map(materias => ({id:materias.id,nome:materias.nome}))
+    const ListSala = db.salas.map(salas => ({id:salas.id, sala:salas.sala}))
     const navigate = useNavigate();
     const deleteEntity = () => {
         adim.delete('leciona', idLeciona)
@@ -45,9 +45,9 @@ export default function EditLecionaPage() {
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
                 <Input input_label={'Id'} value={leciona.id} width={10} onChange={handleChange} id={'id'}></Input>
-                <Combobox data={idListProfessor} placeholder='selecione o ID do professor' onChange={(value) => setLeciona(prev => ({ ...prev, idProfessor: value }))} value={leciona.idProfessor} id={'idProfessor'}/>
-                    <Combobox data={idListMateria} placeholder='selecione o ID da materia' onChange={(value) => setLeciona(prev => ({ ...prev, idMateria: value }))} value={leciona.idMateria} id={'idMateria'}/>
-                    <Combobox data={idListSala} placeholder='selecione o ID da sala' onChange={(value) => setLeciona(prev => ({ ...prev, idSala: value }))} value={leciona.idSala} id={'idSala'}/>
+                  <Combobox data={ListProfessor} placeholder='selecione o professor' textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idProfessor: value.id }))} value={leciona.idProfessor} id={'idProfessor'}/>
+                    <Combobox data={ListMateria} placeholder='selecione a materia'textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idMateria: value.id }))} value={leciona.idMateria} id={'idMateria'}/>
+                    <Combobox data={ListSala} placeholder='selecione a sala' textField='sala' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idSala: value.id }))} value={leciona.idSala} id={'idSala'}/>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>
                  <Button buttonText={'Deletar'} style={DeleteButtonStyle} onclick={deleteEntity}></Button>

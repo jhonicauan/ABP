@@ -39,8 +39,8 @@ export default function EditProfessoresPage() {
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
                 <Input input_label={'Id'} value={professor.id} width={10} onChange={handleChange} id={'id'}></Input>
-                <Input input_label={'Nome'} value={professor.name} width={40} onChange={handleChange} id={'name'}></Input>
-                <Input input_label={'Telefone'} value={professor.idade} width={20} onChange={handleChange} id={'telefone'}></Input>
+                <Input input_label={'Nome'} value={professor.nome} width={40} onChange={handleChange} id={'name'}></Input>
+                <Input input_label={'Telefone'} value={professor.telefone} width={20} onChange={handleChange} id={'telefone'}></Input>
                 <Input input_label={'Email'} value={professor.email} width={40} onChange={handleChange} id={'email'}></Input>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>

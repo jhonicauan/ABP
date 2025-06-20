@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 export default function AddMateriasPage() {
     const [materia, setMaterias] = useState({
         id: '',
-        name: ''
+        nome: ''
     })
 
     const navigate = useNavigate()
@@ -38,7 +38,7 @@ export default function AddMateriasPage() {
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
                     <Input input_label={'Id'} value={materia.id} width={10} onChange={handleChange} id={'id'} />
-                    <Input input_label={'Nome'} value={materia.name} width={40} onChange={handleChange} id={'name'} />
+                    <Input input_label={'Nome'} value={materia.nome} width={40} onChange={handleChange} id={'nome'} />
                     <div className="buttons_line">
                         <Button buttonText={'Adicionar'} type='submit' style={AddButtonStyle} onclick={addEntity} />
                     </div>

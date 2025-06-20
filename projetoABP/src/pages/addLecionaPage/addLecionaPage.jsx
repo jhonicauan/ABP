@@ -47,9 +47,9 @@ export default function AddLecionaPage() {
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
                     <Input input_label={'Id'} value={leciona.id} width={10} onChange={handleChange} id={'id'} />
-                    <Combobox data={ListProfessor} placeholder='selecione o professor' textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idProfessor: value }))} value={leciona.idProfessor} id={'idProfessor'}/>
-                    <Combobox data={ListMateria} placeholder='selecione a materia'textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idMateria: value }))} value={leciona.idMateria} id={'idMateria'}/>
-                    <Combobox data={ListSala} placeholder='selecione a sala' textField='sala' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idSala: value }))} value={leciona.idSala} id={'idSala'}/>
+                    <Combobox data={ListProfessor} placeholder='selecione o professor' textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idProfessor: value.id }))} value={leciona.idProfessor} id={'idProfessor'}/>
+                    <Combobox data={ListMateria} placeholder='selecione a materia'textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idMateria: value.id }))} value={leciona.idMateria} id={'idMateria'}/>
+                    <Combobox data={ListSala} placeholder='selecione a sala' textField='sala' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idSala: value.id }))} value={leciona.idSala} id={'idSala'}/>
                     <div className="buttons_line">
                         <Button buttonText={'Adicionar'} type='submit' style={AddButtonStyle} onclick={addEntity} />
                     </div>
