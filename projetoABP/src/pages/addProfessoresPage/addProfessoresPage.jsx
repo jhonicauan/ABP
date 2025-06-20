@@ -9,10 +9,9 @@ export default function AddProfessoresPage() {
     const [professor, setProfessor] = useState({
         id: '',
         name: '',
-        idade: '',
         email: '',
-        senha: '',
-        idSala: ''
+        telefone: '',
+        senha: ''
     })
 
     const navigate = useNavigate()
@@ -24,7 +23,7 @@ export default function AddProfessoresPage() {
 
     const addEntity = (e) => {
         e.preventDefault()
-        adim.add('professores', aluno)
+        adim.add('professores', professor)
         navigate('/listprofessores')
     }
 
