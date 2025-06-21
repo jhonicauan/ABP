@@ -1,0 +1,39 @@
+main{
+     display: flex;
+     margin: 0 2rem;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+
+.tittle{
+    color: rgb(37, 54, 42); 
+    font-size: 2em;
+}
+
+.edit_box{
+    width: 70%;
+    background-color: rgb(37, 54, 42);
+    border-radius: 0.3em;
+    color: rgb(229, 252, 235);
+    padding: 1em 0;
+    margin: 1em;
+}
+
+.form_box{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 0 2em;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.buttons_line{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 2em;
+    align-items: center;
+}

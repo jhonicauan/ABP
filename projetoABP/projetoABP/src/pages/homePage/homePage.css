@@ -1,0 +1,151 @@
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+.message_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: rgb(229, 252, 235);
+  color: rgb(37, 54, 42);
+  border-radius: 0.5em;
+  margin: 2rem 0;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(37, 54, 42, 0.5);
+}
+
+.interface {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* no máximo 2 colunas */
+    gap: 1.5em;
+    padding: 1.5em;
+    background-color: transparent;
+    border-radius: 0.5em;
+    width: 80%; 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.box_options {
+    background-color: rgb(229, 252, 235);
+    color: rgb(37, 54, 42);
+    padding: 1em;
+    border-radius: 0.4em;
+    font-size: 0.95em;
+    text-align: center;
+    box-shadow: -1px 3px 8px rgba(37, 54, 42, 0.25);
+    transition: box-shadow 0.2s ease-in-out;
+    height: auto;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.box_options:hover {
+    box-shadow: -1px 6px 14px rgba(37,54,42,0.5);
+}
+
+
+.box_options ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.box_options ul li {
+  padding: 0.3em;
+  background-color: rgb(39, 57, 44);
+  border-radius: 0.3em;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.box_options ul li:hover {
+  opacity: 0.9;
+}
+
+.geral_box {
+  background-color: rgb(37, 54, 42);
+  color: rgb(229, 252, 235);
+  padding: 2rem;
+  border-radius: 0.5em;
+  flex: 1 1 40%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.geral_title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.geral_box h2 {
+  font-size: 2em;
+}
+
+.geral_box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.geral_box ul li {
+  font-size: 1.2em;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.icon {
+  min-width: 2em;
+  max-width: 2.5em;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .interface {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .options, .geral_box {
+    width: 90%;
+  }
+
+  .message_box {
+    font-size: 1.5em;
+    width: 90%;
+    text-align: center;
+  }
+
+  .box_options {
+    font-size: 1em;
+  }
+}
