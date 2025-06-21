@@ -40,7 +40,7 @@ export default function EditAlunosPage() {
             </div>
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
-                <Input input_label={'Id'} value={aluno.id} width={10} onChange={handleChange} id={'id'}></Input>
+                <Input dissable={true} input_label={'Id'} value={aluno.id} width={10} onChange={handleChange} id={'id'}></Input>
                 <Input input_label={'Nome'} value={aluno.nome} width={40} onChange={handleChange} id={'nome'}></Input>
                 <Input input_label={'Idade'} value={aluno.idade} width={10} onChange={handleChange} id={'idade'}></Input>
                 <Input input_label={'Email'} value={aluno.email} width={40} onChange={handleChange} id={'email'}></Input>

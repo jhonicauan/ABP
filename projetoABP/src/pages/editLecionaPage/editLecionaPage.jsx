@@ -44,7 +44,7 @@ export default function EditLecionaPage() {
             </div>
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
-                <Input input_label={'Id'} value={leciona.id} width={10} onChange={handleChange} id={'id'}></Input>
+                <Input dissable={true} input_label={'Id'} value={leciona.id} width={10} onChange={handleChange} id={'id'}></Input>
                   <Combobox data={ListProfessor} placeholder='selecione o professor' textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idProfessor: value.id }))} value={leciona.idProfessor} id={'idProfessor'}/>
                     <Combobox data={ListMateria} placeholder='selecione a materia'textField='nome' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idMateria: value.id }))} value={leciona.idMateria} id={'idMateria'}/>
                     <Combobox data={ListSala} placeholder='selecione a sala' textField='sala' dataKey='id' onChange={(value) => setLeciona(prev => ({ ...prev, idSala: value.id }))} value={leciona.idSala} id={'idSala'}/>

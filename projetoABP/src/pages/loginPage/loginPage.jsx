@@ -7,14 +7,13 @@ export default function LoginPage() {
     const [email,setEmail] = useState("");
     const [senha,setSenha] = useState("");
     const navigate = useNavigate();
-    const login = (e) => {
-    e.preventDefault();
-
-    useEffect(()=>{
+      useEffect(()=>{
         if(localStorage.getItem('id')){
             navigate('/home');
         }
     },[navigate])
+    const login = (e) => {
+    e.preventDefault();
     const adm = db.administrador.find(adm => adm.email === email && adm.senha === senha);
     if (adm) {
         localStorage.setItem('id', adm.id);

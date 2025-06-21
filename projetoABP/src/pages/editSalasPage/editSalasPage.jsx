@@ -38,7 +38,7 @@ export default function EditAlunosPage() {
             </div>
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
-                <Input input_label={'Id'} value={sala.id} width={10} onChange={handleChange} id={'id'}></Input>
+                <Input dissable={true} input_label={'Id'} value={sala.id} width={10} onChange={handleChange} id={'id'}></Input>
                 <Input input_label={'Sala'} value={sala.sala} width={40} onChange={handleChange} id={'sala'}></Input>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>

@@ -38,7 +38,7 @@ export default function EditMateriasPage() {
             </div>
             <div className='edit_box'>
             <form className='form_box' onSubmit={updateEntity}>
-                <Input input_label={'Id'} value={materia.id} width={10} onChange={handleChange} id={'id'}></Input>
+                <Input dissable={true} input_label={'Id'} value={materia.id} width={10} onChange={handleChange} id={'id'}></Input>
                 <Input input_label={'Nome'} value={materia.nome} width={40} onChange={handleChange} id={'nome'}></Input>
                 <div className="buttons_line">
                  <Button buttonText={'Salvar'} type='submit' style={SaveButtonStyle} onclick={updateEntity}></Button>

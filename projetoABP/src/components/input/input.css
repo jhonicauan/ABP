@@ -25,3 +25,8 @@
 .input_box input::placeholder{
     font-style: italic;
 }
+
+.input_box input:disabled{
+    background-color: rgb(221, 221, 221);
+    cursor:not-allowed;
+}

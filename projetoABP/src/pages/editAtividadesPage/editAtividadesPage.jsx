@@ -47,6 +47,7 @@ export default function EditAtividadesPage() {
       <div className="edit_box">
         <form className="form_box" onSubmit={updateEntity}>
           <Input
+          dissable={true}
             input_label="ID"
             value={atividade.id}
             width={10}
