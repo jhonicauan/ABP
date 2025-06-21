@@ -6,8 +6,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddMateriasPage() {
+    const ids = db.materias.map(materia => materia.id);
+    const novoId = Math.max(ids)+1;
     const [materia, setMaterias] = useState({
-        id: '',
+        id: novoId,
         nome: ''
     })
 
@@ -37,7 +39,6 @@ export default function AddMateriasPage() {
             </div>
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
-                    <Input input_label={'Id'} value={materia.id} width={10} onChange={handleChange} id={'id'} />
                     <Input input_label={'Nome'} value={materia.nome} width={40} onChange={handleChange} id={'nome'} />
                     <div className="buttons_line">
                         <Button buttonText={'Adicionar'} type='submit' style={AddButtonStyle} onclick={addEntity} />

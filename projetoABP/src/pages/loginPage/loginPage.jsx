@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'
 import { FaUser, FaLock } from "react-icons/fa6";
@@ -10,6 +10,11 @@ export default function LoginPage() {
     const login = (e) => {
     e.preventDefault();
 
+    useEffect(()=>{
+        if(localStorage.getItem('id')){
+            navigate('/home');
+        }
+    },[navigate])
     const adm = db.administrador.find(adm => adm.email === email && adm.senha === senha);
     if (adm) {
         localStorage.setItem('id', adm.id);

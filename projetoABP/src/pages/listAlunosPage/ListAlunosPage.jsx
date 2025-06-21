@@ -5,18 +5,19 @@ import { useEffect, useState } from 'react'
 
 export default function ListAlunosPage() {
   const [listAlunos, setListAlunos] = useState([{nome:''}])
-
+  const [editar,setEditar] = useState(true);
   useEffect(() => {
-    console.log(db.alunos)
     const tipo = localStorage.getItem('tipo');
     const id = localStorage.getItem('id');
     let lista = [];
     let alunos = [];
     if(tipo == 'administrador'){
         alunos = db.alunos;
+        setEditar(true);
     }else if(tipo == 'professor'){
         const salasProf = db.leciona.filter(leciona => leciona.idProfessor == id).map(leciona => leciona.idSala);
         alunos = db.alunos.filter(aluno => salasProf.includes(aluno.idSala));
+        setEditar(false);
     }
     lista = alunos.map(aluno => {
         const salaAluno = db.salas.find(sala => sala.id == aluno.idSala);
@@ -36,7 +37,7 @@ export default function ListAlunosPage() {
       <div className='tittle'>
         <h2>Lista de Alunos</h2>
       </div>
-      <Lista entityList={listAlunos}editRoute="/editAlunos"/>
+      <Lista entityList={listAlunos} editar={editar} editRoute="/editAlunos"/>
     </main>
   )
 }

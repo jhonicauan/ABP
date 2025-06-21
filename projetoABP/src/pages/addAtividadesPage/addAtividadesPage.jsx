@@ -2,21 +2,39 @@ import "./addAtividadesPage.css";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
 import { adim } from "../../entities/adm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { db } from "../../../db";
+import Combobox from "react-widgets/Combobox";
 
 export default function AddAtividadesPage() {
+  const ids = db.atividades.map(atividade => atividade.id);
+  const novoId = Math.max(ids)+1;
+  const idProf = localStorage.getItem('id');
   const [atividade, setAtividade] = useState({
-    id: "",
+    id:novoId,
     idAluno: "",
     idMateria: "",
+    idProfessor:idProf,
     titulo: "",
     descricao: "",
     nota: "",
   });
-
+  const [disable,setDisable] = useState(true);
+  const [listMaterias,setListMaterias] = useState([{nome:''}])
+  const salasProf = db.leciona.filter(leciona => leciona.idProfessor == idProf).map(leciona => leciona.idSala);
+  const ListAlunos = db.alunos.filter(aluno => salasProf.includes(aluno.idSala));
   const navigate = useNavigate();
 
+  useEffect(()=>{
+    if(atividade.idAluno > 0){
+      setDisable(false);
+      const aluno = db.alunos.find(aluno => aluno.id == atividade.idAluno);
+      const materiasProf = db.leciona.filter(leciona => leciona.idSala == aluno.idSala && leciona.idProfessor == idProf).map(leciona => leciona.idMateria);
+      const materias = db.materias.filter(materia => materiasProf.includes(materia.id));
+      setListMaterias(materias);
+    }
+  },[atividade])
   const handleChange = (e) => {
     const key = e.target.id;
     setAtividade((prev) => ({ ...prev, [key]: e.target.value }));
@@ -54,27 +72,8 @@ export default function AddAtividadesPage() {
       </div>
       <div className="edit_box">
         <form className="form_box" onSubmit={addEntity}>
-          <Input
-            input_label="ID"
-            value={atividade.id}
-            width={10}
-            onChange={handleChange}
-            id="id"
-          />
-          <Input
-            input_label="ID do Aluno"
-            value={atividade.idAluno}
-            width={20}
-            onChange={handleChange}
-            id="idAluno"
-          />
-          <Input
-            input_label="ID da Matéria"
-            value={atividade.idMateria}
-            width={20}
-            onChange={handleChange}
-            id="idMateria"
-          />
+           <Combobox data={ListAlunos} placeholder='selecione o aluno' textField='nome' dataKey='id' onChange={(value) => setAtividade(prev => ({ ...prev, idAluno: value.id }))} value={atividade.idAluno} id={'idAluno'}/>
+           <Combobox data={listMaterias} placeholder='selecione a materia' textField='nome' dataKey='id' onChange={(value) => setAtividade(prev => ({ ...prev, idMateria: value.id }))} value={atividade.idMateria} id={'idMateria'} disabled={disable}/>
           <Input
             input_label="Título"
             value={atividade.titulo}

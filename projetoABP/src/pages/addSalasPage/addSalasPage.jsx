@@ -6,8 +6,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddSalasPage() {
+    const ids = db.salas.map(sala => sala.id);
+    const novoId = Math.max(ids)+1;
     const [sala, setSala] = useState({
-        id: '',
+        id: novoId,
         sala: ''
     })
 
@@ -37,7 +39,6 @@ export default function AddSalasPage() {
             </div>
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
-                    <Input input_label={'Id'} value={sala.id} width={10} onChange={handleChange} id={'id'} />
                     <Input input_label={'Sala'} value={sala.sala} width={40} onChange={handleChange} id={'sala'} />
                     <div className="buttons_line">
                         <Button buttonText={'Adicionar'} type='submit' style={AddButtonStyle} onclick={addEntity} />

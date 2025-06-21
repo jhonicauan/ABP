@@ -7,21 +7,11 @@ import { prof } from '../../entities/professor'
 import './homePage.css'
 import { Link } from 'react-router-dom'
 export default function Homepage() {
-    const navigate = useNavigate()
-
-    useEffect(() => {
-        const id = localStorage.getItem('id')
-        const tipo = localStorage.getItem('tipo')
-
-        if (!id || !tipo) {
-        navigate('/')
-        }
-    }, [navigate])
     const user = adim.find(localStorage.getItem('tipo'),localStorage.getItem('id'))
     const Options = {
-        alunos: ['atividades', 'materias'],
-        professores: ['atividades', 'salas'],
-        administrador: ['professores','alunos', 'materias', 'salas','leciona']
+        alunos: [{entidade:'atividades',visualizar:true,adicionar:false}, {entidade:'materias',visualizar:true,adicionar:false}],
+        professores: [{entidade:'atividades',visualizar:true,adicionar:true}, {entidade:'salas',visualizar:true,adicionar:false}, {entidade:'materias',visualizar:true,adicionar:false}],
+        administrador: [{entidade:'professores',visualizar:true,adicionar:true},{entidade:'alunos',visualizar:true,adicionar:true},{entidade:'materias',visualizar:true,adicionar:true}, {entidade:'salas',visualizar:true,adicionar:true},{entidade:'leciona',visualizar:true,adicionar:true}]
     }
 
     return (
@@ -49,15 +39,22 @@ function Welcomeback({name}){
     )
 }
 function Boxoptions({entity}){
-    return(
-        <div className='box_options'>
-            <h3>{entity}</h3>
+    const visualizar = (
+    <div className='box_options'>
+            <h3>{entity.entidade}</h3>
             <ul>
-           <Link to={`/add${entity}`}> <li>Adicionar {entity}</li> </Link>
-            <Link to={`/list${entity}`}><li>Listar {entity}</li></Link>
+            <Link to={`/list${entity.entidade}`}><li>Listar {entity.entidade}</li></Link>
             </ul>
-        </div>
-    )
+        </div>);
+     const adicionar = (
+    <div className='box_options'>
+            <h3>{entity.entidade}</h3>
+            <ul>
+            <Link to={`/add${entity.entidade}`}><li>Adicionar {entity.entidade}</li></Link>
+            <Link to={`/list${entity.entidade}`}><li>Listar {entity.entidade}</li></Link>
+            </ul>
+        </div>);
+    return entity.adicionar ? adicionar:visualizar;
 }
 
 const InfosAdm = () => {

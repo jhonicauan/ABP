@@ -19,11 +19,13 @@ import EditLecionaPage from "./pages/editLecionaPage/editLecionaPage";
 import ListAtividadesPage from "./pages/listAtividadesPage/listAtividadesPage";
 import AddAtividadesPage from "./pages/addAtividadesPage/addAtividadesPage";
 import EditAtividadesPage from "./pages/editAtividadesPage/editAtividadesPage";
+import { useNavigate } from "react-router-dom";
 import "react-widgets/styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  
   return (
     <>
       <Router>
@@ -88,7 +90,6 @@ function App() {
             path="/editatividades/:idAtividade"
             element={<EditAtividadesPage />}
           />
-          8c300e98702b15ab77d264125b685f93a9ac6eef
         </Routes>
       </Router>
     </>

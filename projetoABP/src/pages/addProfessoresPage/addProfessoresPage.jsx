@@ -6,8 +6,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function AddProfessoresPage() {
+    const ids = db.professores.map(professor => professor.id);
+    const novoId = Math.max(ids)+1;
     const [professor, setProfessor] = useState({
-        id: '',
+        id: novoId,
         nome: '',
         email: '',
         telefone: '',
@@ -40,7 +42,6 @@ export default function AddProfessoresPage() {
             </div>
             <div className='edit_box'>
                 <form className='form_box' onSubmit={addEntity}>
-                    <Input input_label={'Id'} value={professor.id} width={10} onChange={handleChange} id={'id'} />
                     <Input input_label={'Nome'} value={professor.nome} width={40} onChange={handleChange} id={'nome'} />
                     <Input input_label={'Email'} value={professor.email} width={40} onChange={handleChange} id={'email'} />
                     <Input input_label={'Telefone'} value={professor.telefone} width={20} onChange={handleChange} id={'telefone'} />

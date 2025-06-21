@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 export default function ListLecionaPage() {
     const Leciona = db['leciona']
     const [listLeciona,setListLeciona] = useState(Leciona);
+    const [editar,setEditar] = useState(true);
     useEffect(()=>{
         const lista = Leciona.map(leciona =>{
             const professor = db.professores.find(professor => professor.id == leciona.idProfessor);
@@ -25,7 +26,7 @@ export default function ListLecionaPage() {
             <div className='tittle'>
                 <h2>Lista de Leciona</h2>
             </div>
-            <Lista entityList={listLeciona} editRoute="/editleciona" />
+            <Lista entityList={listLeciona} editar={editar} editRoute="/editleciona" />
         </main>
     )
 }
