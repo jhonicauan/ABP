@@ -4,6 +4,7 @@ import Button from '../../components/button/button'
 import { adim } from '../../entities/adm'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { db } from '../../../db'
 
 export default function AddSalasPage() {
     const ids = db.salas.map(sala => sala.id);

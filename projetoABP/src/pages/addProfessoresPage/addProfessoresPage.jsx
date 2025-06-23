@@ -4,6 +4,7 @@ import Button from '../../components/button/button'
 import { adim } from '../../entities/adm'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { db } from '../../../db'
 
 export default function AddProfessoresPage() {
     const ids = db.professores.map(professor => professor.id);

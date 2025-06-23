@@ -5,6 +5,7 @@ html, body{
     max-width: 100%;
     margin: 0;
     background-color:  rgb(238, 248, 241);
+    padding-bottom: 1em;
 }
 
 a{

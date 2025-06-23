@@ -1,6 +1,7 @@
 import './addMateriasPage.css'
 import Input from '../../components/input/input'
 import Button from '../../components/button/button'
+import { db } from '../../../db'
 import { adim } from '../../entities/adm'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
