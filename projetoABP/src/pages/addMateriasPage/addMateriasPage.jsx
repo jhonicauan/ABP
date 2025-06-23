@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AddMateriasPage() {
     const ids = db.materias.map(materia => materia.id);
-    const novoId = Math.max(ids)+1;
+     const novoId = ids.length + 1;
     const [materia, setMaterias] = useState({
         id: novoId,
         nome: ''

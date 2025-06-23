@@ -9,7 +9,7 @@ import Combobox from "react-widgets/Combobox";
 
 export default function AddAtividadesPage() {
   const ids = db.atividades.map(atividade => atividade.id);
-  const novoId = Math.max(ids)+1;
+   const novoId = ids.length + 1;
   const idProf = localStorage.getItem('id');
   const [atividade, setAtividade] = useState({
     id:novoId,

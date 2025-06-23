@@ -8,7 +8,7 @@ import { db } from '../../../db'
 
 export default function AddSalasPage() {
     const ids = db.salas.map(sala => sala.id);
-    const novoId = Math.max(ids)+1;
+     const novoId = ids.length + 1;
     const [sala, setSala] = useState({
         id: novoId,
         sala: ''

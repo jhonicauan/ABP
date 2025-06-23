@@ -8,7 +8,7 @@ import { db } from '../../../db'
 
 export default function AddProfessoresPage() {
     const ids = db.professores.map(professor => professor.id);
-    const novoId = Math.max(ids)+1;
+    const novoId = ids.length + 1;
     const [professor, setProfessor] = useState({
         id: novoId,
         nome: '',

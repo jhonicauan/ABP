@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import Combobox from "react-widgets/Combobox";
 export default function AddAlunosPage() {
   const ids = db.alunos.map(aluno => aluno.id);
-  const novoId = Math.max(ids)+1;
+   const novoId = ids.length + 1;
     const [aluno, setAluno] = useState({
         id: novoId,
         nome: '',
