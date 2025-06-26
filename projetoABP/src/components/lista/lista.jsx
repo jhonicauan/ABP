@@ -1,17 +1,23 @@
 import './lista.css'
 import edit_icon from './images/edit_icon.png'
 import { Link } from 'react-router-dom'
+import Notfound from '../not_found/notFound'
 
 export default function Lista({ entityList, keyException, editRoute, editar = true }) {
-  const EntityKeys = Object.keys(entityList[0])
+  const EntityKeys = entityList.length != 0 ? Object.keys(entityList[0]) : []
   const Keys = EntityKeys.filter(key => key !== 'password' && key !== keyException)
 
   return (
     <div className='list_main_box'>
+      {entityList.length != 0  ? 
+      <>
       <ListHeader keyList={Keys} editar={editar} />
       <div className='list_inner_box'>
         <ListContent keyList={Keys} entityList={entityList} editRoute={editRoute} editar={editar} />
-      </div>
+      </div> 
+      </> :
+      <Notfound></Notfound>
+      }
     </div>
   )
 }

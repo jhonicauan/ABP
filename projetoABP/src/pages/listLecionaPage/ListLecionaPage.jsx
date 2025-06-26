@@ -26,7 +26,7 @@ export default function ListLecionaPage() {
             <div className='tittle'>
                 <h2>Lista de Leciona</h2>
             </div>
-            <Lista entityList={listLeciona} editar={editar} editRoute="/editleciona" />
+            <Lista entityList={listLeciona} editar={editar} editRoute="/editleciona" /> 
         </main>
     )
 }

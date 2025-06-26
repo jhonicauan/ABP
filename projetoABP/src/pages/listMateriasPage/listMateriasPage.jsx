@@ -18,7 +18,7 @@ export default function ListMateriasPage() {
             <div className='tittle'>
                 <h2>Lista de Materias</h2>
             </div>
-            <Lista entityList={listMaterias} editar={editar} editRoute="/editmaterias" />
+            <Lista entityList={listMaterias} editar={editar} editRoute="/editmaterias" /> 
         </main>
     )
 }

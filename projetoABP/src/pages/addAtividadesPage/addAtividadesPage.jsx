@@ -8,9 +8,9 @@ import { db } from "../../../db";
 import Combobox from "react-widgets/Combobox";
 
 export default function AddAtividadesPage() {
-  const ids = db.atividades.map(atividade => atividade.id);
-   const novoId = ids.length + 1;
   const idProf = localStorage.getItem('id');
+  const ids = db.atividades.map(atividade => atividade.id);
+  const novoId = ids.length + 1;
   const [atividade, setAtividade] = useState({
     id:novoId,
     idAluno: "",
@@ -54,7 +54,7 @@ export default function AddAtividadesPage() {
       alert("Preencha todos os campos antes de adicionar a atividade.");
       return;
     }
-
+    console.log(atividade)
     adim.add("atividades", atividade);
     navigate("/listatividades");
   };

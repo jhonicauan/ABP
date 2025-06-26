@@ -10,7 +10,7 @@ import { db } from '../../../db'
 
 export default function AddLecionaPage() {
     const ids = db.leciona.map(leciona => leciona.id);
-    const novoId = Math.max(ids)+1;
+    const novoId = ids.length + 1;
     const [leciona, setLeciona] = useState({
         id: novoId,
         idProfessor:'',

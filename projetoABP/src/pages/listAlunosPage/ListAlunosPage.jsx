@@ -37,7 +37,7 @@ export default function ListAlunosPage() {
       <div className='tittle'>
         <h2>Lista de Alunos</h2>
       </div>
-      <Lista entityList={listAlunos} editar={editar} editRoute="/editAlunos"/>
+      <Lista entityList={listAlunos} editar={editar} editRoute="/editAlunos"/> 
     </main>
   )
 }

@@ -19,8 +19,8 @@ export default function ListAtividadesPage() {
       const listaAtividade = atividadesProf.map(atividade =>{
         const professor = db.professores.find(professor => professor.id == atividade.idProfessor);
         const materia = db.materias.find(materia => materia.id == atividade.idMateria);
-        const aluno = db.alunos.find(aluno => aluno.id = atividade.idAluno);
-
+        const aluno = db.alunos.find(aluno => aluno.id == atividade.idAluno);
+        const idToShow = atividadesProf.map(atvItem => atvItem.id)
         return({
           id:atividade.id,
           aluno:aluno.nome,
@@ -38,7 +38,9 @@ export default function ListAtividadesPage() {
       const listaAtividade = atividadeAluno.map(atividade =>{
         const professor = db.professores.find(professor => professor.id == atividade.idProfessor);
         const materia = db.materias.find(materia => materia.id == atividade.idMateria);
-        const aluno = db.alunos.find(aluno => aluno.id = atividade.idAluno);
+        const aluno = db.alunos.find(aluno => aluno.id == atividade.idAluno);
+
+        console.log(aluno)
 
         return({
           id:atividade.id,
@@ -58,7 +60,7 @@ export default function ListAtividadesPage() {
       <div className="tittle">
         <h2>Lista de Atividades</h2>
       </div>
-      <Lista entityList={listAtividades} editar={editar} editRoute="/editatividades" />
+      <Lista entityList={listAtividades} editar={editar} editRoute="/editatividades" /> 
     </main>
   );
 }
